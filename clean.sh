@@ -1,10 +1,10 @@
 #/!bin/sh
 
-cd /home/fb/Documents/Formelsamling;
+FS_HOME=`dirname $0`;
 
-mkdir tmp;
-mv formelsamling.tex graph.mp tmp;
-rm -f formelsamling.* graph.* texnum.mpx texput.log;
-mv tmp/* .;
-rm -rf tmp;
+mkdir $FS_HOME/tmp;
+mv $FS_HOME/formelsamling.tex $FS_HOME/graph.mp $FS_HOME/tmp;
+rm -f $FS_HOME/formelsamling.* $FS_HOME/graph.* $FS_HOME/texnum.mpx $FS_HOME/texput.log;
+mv $FS_HOME/tmp/* $FS_HOME;
+rm -rf $FS_HOME/tmp;
 

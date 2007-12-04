@@ -1,10 +1,12 @@
 #!/bin/sh
 
-cd /home/fb/Documents/Formelsamling;
+FS_HOME=`dirname $0`;
 
-./clean.sh;
-mpost --interaction nonstopmode graph.mp;
-pdflatex -interaction=nonstopmode formelsamling.tex;
-pdflatex -interaction=nonstopmode formelsamling.tex;
-pdflatex -interaction=nonstopmode formelsamling.tex;
+cd $FS_HOME;
+
+$FS_HOME/clean.sh;
+mpost --interaction nonstopmode $FS_HOME/graph.mp;
+pdflatex -interaction=nonstopmode $FS_HOME/formelsamling.tex;
+pdflatex -interaction=nonstopmode $FS_HOME/formelsamling.tex;
+pdflatex -interaction=nonstopmode $FS_HOME/formelsamling.tex;
 
