@@ -1,0 +1,693 @@
+\documentclass[11pt,a4paper,landscape,twocolumn,fleqn,leqno]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{ifpdf}
+\ifpdf
+  \DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+\usepackage[danish]{babel}
+\usepackage[pdftex,
+	pdfauthor={Frank Bille},
+	pdftitle={Formelsamling},
+	bookmarks=true,
+	colorlinks,
+	linkcolor=black
+]
+{hyperref}
+\author{Frank Bille}
+\title{Formelsamling}
+
+\setlength{\columnsep}{1cm}
+\setlength{\marginparwidth}{0cm}
+\setlength{\topmargin}{0cm}
+\setlength{\textheight}{400pt}
+
+\begin{document}
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+\newpage
+
+\setlength{\parindent}{0mm}
+
+\section{Brøker}
+
+\begin{equation}
+a \cdot \frac{b}{c} = \frac{a \cdot b}{c} = \frac{a}{c} \cdot b
+\end{equation}
+
+\begin{equation}
+\frac{a}{b} \pm \frac{c}{b} = \frac{a \pm c}{b}
+\end{equation}
+
+\begin{equation}
+\frac{a}{b} \pm \frac{c}{d} = \frac{a \cdot d \pm c \cdot b}{b \cdot d}
+\end{equation}
+
+\begin{equation}
+\frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d}
+\end{equation}
+
+\begin{equation}
+\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a}{b} \cdot \frac{d}{c}
+\end{equation}
+
+\section{Procentregning}
+
+Kapitalfremskrivning \\
+Startkapital $K_0$ \\
+Rentefod $r$ \\
+Kapital $K$ efter $n$ terminer
+
+\begin{equation}
+K = K_{0} \cdot \left(1+r\right)^{n}
+\end{equation}
+
+Gennemsnitlig procentvis ændring $r$
+
+\begin{equation}
+1+r = \sqrt[n]{\left(1+r_{1}\right) \cdot \left(1+r_{2}\right) \cdot ... \cdot \left(1+r_{n}\right)}
+\end{equation} 
+
+\section{Potensregneregler}
+
+\begin{equation}
+a^{r} \cdot a^{s} = a^{r+s}
+\end{equation}
+
+\begin{equation}
+\dfrac{a^{r}}{a^{s}} = a^{r-s}
+\end{equation}
+
+\begin{equation}
+\left(a^{r}\right)^{s} = a^{r \cdot s}
+\end{equation}
+
+\begin{equation}
+\left(a \cdot b\right)^{r} = a^{r} \cdot b^{r}
+\end{equation}
+
+\begin{equation}
+\left(\dfrac{a}{b}\right)^{r} = \dfrac{a^{r}}{b^{r}}
+\end{equation}
+
+\begin{equation}
+a^{0} = 1
+\end{equation}
+
+\begin{equation}
+a^{-r} = \dfrac{1}{a^{r}}
+\end{equation}
+
+\begin{equation}
+\sqrt[r]{a} = a^{\frac{1}{r}}
+\end{equation}
+
+\begin{equation}
+\sqrt[s]{a^{r}} = a^{\frac{r}{s}}
+\end{equation}
+
+\section{Proportionalitet}
+
+Proportionale størrelse $x$ og $y$
+
+\begin{eqnarray}
+y & =&  k \cdot x \\
+\frac{y}{x} & = & k \nonumber
+\end{eqnarray}
+
+Omvendt proportionale størrelser $x$ og $y$
+
+\begin{eqnarray}
+y & = & c \cdot \frac{1}{x} \\
+x \cdot y & = & c \nonumber
+\end{eqnarray}
+
+\vfill
+
+\section{Koordinatsystem i planen}
+
+\includegraphics{graph.1}
+
+Afstanden $|AB|$ mellem to punkter $A(x_1,y_1)$ og $B(x_2,y_2)$
+
+\begin{equation}
+|AB| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}
+\end{equation}
+
+\includegraphics{graph.2}
+
+Midtpunkt $M$ af linjestykke $AB$
+
+\begin{equation}
+M\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right)
+\end{equation}
+
+\section{Linje}
+
+\includegraphics{graph.3}
+
+Ligninger for linjen $l$
+
+\begin{eqnarray}
+y & = & ax+b \\
+y-y_1 & = & a(x-x_1) \nonumber
+\end{eqnarray}
+
+Hældningskoefficent (stigningstal) $a$ for linjen $l$
+
+\begin{equation}
+a = \frac{y_2 - y_1}{x_2 - x_1}
+\end{equation}
+
+\begin{equation}
+a = \tan v
+\end{equation}
+
+\includegraphics{graph.10}
+
+Ortogonale linjer $l$ og $m$
+
+\begin{equation}
+l \perp m \Leftrightarrow a \cdot c = -1
+\end{equation}
+
+\includegraphics{graph.11}
+
+Afstand $\text{dist}(P,l)$ fra punktet $P(x_1,y_1)$ til linjen $l$ med ligningen $y = ax+b$
+
+\begin{equation}
+\text{dist}(P,l) = \frac{|ax_1 + b - y_1|}{\sqrt{a^2 + 1}}
+\end{equation}
+
+\vfill
+
+\section{Cirkel}
+
+\includegraphics{graph.12}
+
+Ligning for cirkel med centrum i $C(a,b)$ og radius $r$
+
+\begin{equation}
+(x-a)^2 + (y-b)^2 = r^2
+\end{equation}
+
+\newpage
+
+\section{Parabel}
+
+\includegraphics{graph.13}
+
+Ligning for parabel med symmetriakse parallel med andenaksen
+
+\begin{equation}
+y = ax^2 + bx +c
+\end{equation}
+
+Toppunkt $T$
+
+\begin{equation}
+T\left(\frac{-b}{2a}, \frac{-d}{4a}\right), \quad \text{hvor} \quad d = b^2 - 4ac
+\end{equation}
+
+Skæringspunkter $S_1$ og $S_2$ med førsteaksen
+
+\begin{equation}
+S_1\left(\frac{-b - \sqrt{d}}{2a}, 0\right), \quad S_2\left(\frac{-b + \sqrt{d}}{2a}, 0\right)
+\end{equation}
+
+\newpage
+
+\section{Trekant}
+
+\paragraph{Ensvinklede trekanter}
+
+\begin{equation}
+\frac{a_1}{a} = \frac{b_1}{b} = \frac{c_1}{c} = k
+\end{equation}
+
+\begin{eqnarray}
+a_1 & = & k \cdot a \\
+b_1 & = & k \cdot b \nonumber \\
+c_1 & = & k \cdot c \nonumber
+\end{eqnarray}
+
+\paragraph{Retvinklet trekant}
+
+\begin{equation}
+a^2 + b^2 = c^2
+\end{equation}
+
+\begin{equation}
+\sin A = \frac{a}{c}
+\end{equation}
+
+\begin{equation}
+\cos A = \frac{b}{c}
+\end{equation}
+
+\begin{equation}
+\tan A = \frac{a}{b}
+\end{equation}
+
+\paragraph{Vilkårlig trekant}
+
+Cosinusrelation
+
+\begin{equation}
+c^2 = a^2 + b^2 - 2ab\cos C
+\end{equation}
+
+Sinusrelation
+
+\begin{equation}
+\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}
+\end{equation}
+
+Trekantens areal $T$
+
+\begin{eqnarray}
+T & = & \frac{1}{2}h_a a \\
+& = & \frac{1}{2}bc\sin A \nonumber
+\end{eqnarray}
+
+\newpage
+
+\section{Polynomier}
+
+Førstegradspolynomium, lineær funktion $f$
+
+\begin{equation}
+f(x) = ax+b
+\end{equation}
+
+Andengradspolynomium $p$ med rødder $x_1$ og $x_2$
+
+\begin{eqnarray}
+p(x) & = & ax^2 + bx + c \\
+ & = & a(x-x_1)(x-x_2) \nonumber
+\end{eqnarray}
+
+Rødder i andengradspolynomium $p$
+
+\begin{equation}
+x_1 = \frac{-b - \sqrt{d}}{2a}, \quad \frac{-b + \sqrt{d}}{2a}, \quad \text{hvor} \quad d = b^2 - 4ac
+\end{equation}
+
+Polynomium $p$ af grad $n$
+
+\begin{equation}
+p(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_1x + a_0
+\end{equation}
+
+\vfill
+
+\section{Logaritmefunktioner}
+
+Grafer for $y = \log x$ og $y = 10^x$
+
+\begin{equation}
+y = \log x \Leftrightarrow x = 10^y
+\end{equation}
+
+Logaritmefunktionen $\log$ med grundtal 10
+
+\begin{equation}
+\log 10 = 1
+\end{equation}
+
+\begin{equation}
+\log(a \cdot b) = \log a + \log b
+\end{equation}
+
+\begin{equation}
+\log\left(\frac{a}{b}\right) = \log a - \log b
+\end{equation}
+
+\begin{equation}
+\log(a^r) = r \cdot \log a
+\end{equation}
+
+Grafer for $y = \ln x$ og $y = e^x$
+
+\begin{equation}
+y = \ln x \Leftrightarrow x = e^y
+\end{equation}
+
+Den naturlige logaritmefunktion $\ln$ med grundtal $e$
+
+\begin{equation}
+\ln e = 1
+\end{equation}
+
+\begin{equation}
+\ln (a \cdot b) = \ln a + \ln b
+\end{equation}
+
+\begin{equation}
+\ln\left(\frac{a}{b}\right) = \ln a - \ln b
+\end{equation}
+
+\begin{equation}
+\ln(a^r) = r \cdot \ln a
+\end{equation}
+
+\vfill
+
+\section{Eksponentialfunktioner}
+
+Eksponentialfunktion
+
+\begin{equation}
+f(x) = a^x
+\end{equation}
+
+Funktion, der er proportional med en eksponentialfunktion
+
+\begin{equation}
+f(x) = b \cdot a^x
+\end{equation}
+
+Bestemmelse af fremskivningsfaktor $a$
+
+\begin{equation}
+a = \sqrt[x_2-x_1]{\frac{y_2}{y_1}}
+\end{equation}
+
+En eksponentielt voksende funktion $f$ med fremskrivningsfaktor $a$, hvor $a > 1$, dvs. med vækstrate $r$, hvor $r > 0$
+
+\begin{eqnarray}
+f(x) & = & b \cdot a^x \\
+ & = & b \cdot (1+r)^x \nonumber \\
+ & = & b \cdot e^{kx}, \quad \text{hvor} \quad k = \ln a \nonumber
+\end{eqnarray}
+
+Fordoblingskonstant $T_2$
+
+\begin{equation}
+T_2 = x_2 - x_1
+\end{equation}
+
+\begin{equation}
+T_2 = \frac{\log 2}{\log a} = \frac{\ln 2}{\ln a} = \frac{\ln 2}{k}
+\end{equation}
+
+\begin{equation}
+b \cdot a^x = b \cdot e^{kx} = b \cdot 2^{\frac{x}{T_2}}
+\end{equation}
+
+En eksponentielt aftagende funktion $f$ med fremskrivningsfaktor $a$, hvor $0 < a < 1$, dvs. med vækstrate $-r$, hvor $r > 0$
+
+\begin{eqnarray}
+f(x) & = & b \cdot a^x \\
+ & = & b \cdot (1-r)^x \nonumber \\
+ & = & b \cdot e^{-kx}, \quad \text{hvor} \quad k = -\ln a \nonumber
+\end{eqnarray}
+
+Halveringskonstant $T_{\frac{1}{2}}$
+
+\begin{equation}
+T_{\frac{1}{2}} = x_2 - x_1
+\end{equation}
+
+\begin{equation}
+T_{\frac{1}{2}} = \frac{\log\left(\frac{1}{2}\right)}{\log a} = \frac{\ln\left(\frac{1}{2}\right)}{\ln a} = \frac{\ln\left(\frac{1}{2}\right)}{-k}
+\end{equation}
+
+\begin{equation}
+b \cdot a^x = b \cdot e^{-kx} = b \cdot \left(\frac{1}{2}\right)^{\frac{x}{T_{\frac{1}{2}}}}
+\end{equation}
+
+\section{Potentsfunktioner}
+
+Potensfunktion
+
+\begin{equation}
+f(x) = x^a = e^{a\ln x}
+\end{equation}
+
+\begin{equation}
+y = x^a \Leftrightarrow x = \sqrt[a]{y}
+\end{equation}
+
+Funktion, der er proportional med en potensfunktion
+
+\begin{equation}
+f(x) = b \cdot x^a
+\end{equation}
+
+Bestemmelse af eksponenten $a$
+
+\begin{equation}
+a = \frac{\log y_2 - \log y_1}{\log x_2 - \log x_1} = \frac{\ln y_2 - \ln y_1}{\ln x_2 - \ln x_1}
+\end{equation}
+
+Funktion $f$ defineres som $f(x) = b \cdot x^a$. $f(x)$ fremskrives med faktor $q^a$, når $x$ fremskrives med faktor $q$
+
+\begin{equation}
+f(q \cdot x) = q^a \cdot f(x)
+\end{equation}
+
+\vfill
+
+\section{Trigonoetriske funktioner}
+
+\begin{equation}
+(\cos x)^2 + (\sin x)^2 = 1
+\end{equation}
+
+\begin{eqnarray}
+\cos(x + 2\pi) & = & \cos x \\
+\sin(x + 2\pi) & = & \sin x \nonumber
+\end{eqnarray}
+
+\begin{eqnarray}
+\cos(-x) & = & \cos x \\
+\sin(-x) & = & - \sin x \nonumber
+\end{eqnarray}
+
+\begin{eqnarray}
+\cos(\pi - x) & = & - \cos x \\
+\sin(\pi - x) & = & \sin x \nonumber
+\end{eqnarray}
+
+\begin{eqnarray}
+\cos\left(\frac{\pi}{2}-x\right) & = & \sin x \\
+\sin\left(\frac{\pi}{2}-x\right) & = & \cos x \nonumber
+\end{eqnarray}
+
+\begin{equation}
+\tan x = \frac{\sin x}{\cos x}
+\end{equation}
+
+\begin{equation}
+\tan(-x) = -\tan x
+\end{equation}
+
+\begin{equation}
+\tan(x+\pi) = \tan x
+\end{equation}
+
+Specielle funktionsværdier
+
+\begin{tabular}{c|c c c c c}
+\hline
+Grader       & $0^{\circ}$ & $30^{\circ}$ & $45^{\circ}$ & $60^{\circ}$ & $90^{\circ}$ \\
+\hline
+Radiantal    & $0$ & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ & $\dfrac{\pi}{2}$ \\
+\hline
+sin          & $0$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{3}}{2}$ & $1$ \\
+\hline
+cos          & $1$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{1}{2}$ & $0$ \\
+\hline
+tan          & $0$ & $\dfrac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & -- \\
+\hline
+\end{tabular}
+
+\section{Differentialregning}
+
+\begin{equation}
+y = f(x_0) + f'(x_0)(x-x_0)
+\end{equation}
+
+\begin{equation}
+p(x) = f(x_0) + f'(x_0)(x-x_0)
+\end{equation}
+
+\begin{equation}
+\left(f \pm g\right)'(x) = f'(x) \pm g'(x)
+\end{equation}
+
+\begin{equation}
+\left(f \cdot g\right)'(x) = f'(x) \cdot g(x) + f(x) \cdot g'(x)
+\end{equation}
+
+\begin{equation}
+\left(k \cdot f\right)'(x) = k \cdot f'(x)
+\end{equation}
+
+\begin{equation}
+\left(\frac{f}{g}\right)'(x) = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{\left(g(x)\right)^2}
+\end{equation}
+
+\begin{equation}
+\left(f \circ g\right)'(x) = \left(f\left(g(x)\right)\right)' = f'\left(g(x)\right) \cdot g'(x)
+\end{equation}
+
+\section{Regneregler for integration}
+
+I dette afsnit betegner $F$ en stamfunktion til $f$
+
+\paragraph{Ubestemt integral}
+
+\begin{equation}
+\int f(x)\, \mathrm{d}x = F(x) + c
+\end{equation}
+
+\begin{equation}
+\int \left(f(x) \pm g(x)\right)\, \mathrm{d}x = \int f(x)\, \mathrm{d}x \pm \int g(x)\, \mathrm{d}x
+\end{equation}
+
+\begin{equation}
+\int k \cdot f(x)\, \mathrm{d}x = k \cdot \int f(x)\, \mathrm{d}x
+\end{equation}
+
+\begin{equation}
+\int f(x) \cdot g(x)\, \mathrm{d}x = F(x) \cdot g(x) -  \int F(x) \cdot g'(x)\, \mathrm{d}x
+\end{equation}
+
+\begin{equation}
+\int f(g(x)) \cdot g'(x)\, \mathrm{d}x = \int f(t)\, \mathrm{d}t \quad \mbox{hvor} \quad t = g(x)
+\end{equation}
+
+\paragraph{Bestemt integral}
+
+\begin{equation}
+\int_a^b f(x)\, \mathrm{d}x = \left[F(x)\right]_a^b = F(b) - F(a)
+\end{equation}
+
+\begin{equation}
+\int_a^b f(x)\, \mathrm{d}x = \int_a^c f(x)\, \mathrm{d}x + \int_b^c f(x)\, \mathrm{d}x
+\end{equation}
+
+\begin{equation}
+\int_a^b \left(f(x) \pm g(x)\right)\, \mathrm{d}x = \int_a^b f(x)\, \mathrm{d}x \pm \int_a^b g(x)\, \mathrm{d}x
+\end{equation}
+
+\begin{equation}
+\int_a^b k \cdot f(x)\, \mathrm{d}x = k \cdot \int_a^b f(x)\, \mathrm{d}x
+\end{equation}
+
+\begin{equation}
+\int_a^b k \cdot f(x)\, \mathrm{d}x = k \cdot \int_a^b f(x)\, \mathrm{d}x
+\end{equation}
+
+\begin{equation}
+\int_a^b f(x) \cdot g(x)\, \mathrm{d}x = \left[F(x) \cdot g(x) \right]_a^b - \int_a^b F(x) \cdot g'(x)\, \mathrm{d}x
+\end{equation}
+
+\begin{eqnarray}
+\int_a^b f(g(x)) \cdot g'(x)\, \mathrm{d}x & = & \int_{g(a)}^{g(b)} f(t)\, \mathrm{d}t  \quad \mbox{hvor} \quad t = g(x) \\
+ & = & F(g(b)) - F(g(a)) \nonumber
+\end{eqnarray}
+
+\section{Areal og omkreds}
+
+\subsection{Trekant}
+
+\includegraphics{graph.4}
+
+Højde $h$ \\
+Grundlinje $g$ \\
+Areal $A$ \\
+Omkreds $O$
+
+\begin{equation}
+A = \frac{1}{2} \cdot h \cdot g
+\end{equation}
+
+\begin{equation}
+O = |AB| + |BC| + |CA|
+\end{equation}
+
+\vfill
+
+\subsection{Kvadrat}
+
+\includegraphics{graph.5}
+
+Sidelængde $a$ \\
+Areal $A$
+
+\begin{equation}
+A = a \cdot a = a^2
+\end{equation}
+
+\vfill
+
+\subsection{Rectangle}
+
+\includegraphics{graph.6}
+
+Højde $h$ \\
+Grundlinje $g$ \\
+Areal $A$
+
+\begin{equation}
+A = h \cdot g
+\end{equation}
+
+\vfill
+
+\subsection{Parallelogram}
+
+\includegraphics{graph.7}
+
+Højde $h$ \\
+Grundlinje $g$ \\
+Areal $A$
+
+\begin{equation}
+A = h \cdot g
+\end{equation}
+
+\vfill
+
+\subsection{Trapez}
+
+\includegraphics{graph.8}
+
+Højde $h$ \\
+Parallelle sider $a$ og $b$ \\
+Areal $A$
+
+\begin{equation}
+A = \frac{1}{2} \cdot h \cdot (a + b)
+\end{equation}
+
+\vfill
+
+\subsection{Cirkel}
+
+\includegraphics{graph.9}
+
+Radius $r$ \\
+Areal $A$ \\
+Omkreds $O$
+
+\begin{equation}
+A = \pi \cdot r^2
+\end{equation}
+
+\begin{equation}
+O = 2 \cdot \pi \cdot r
+\end{equation}
+
+\vfill
+
+\end{document}
