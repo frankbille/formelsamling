@@ -24,20 +24,24 @@ enddef;
 
 def draw_triangle(expr A, B, C, Albl, Blbl, Clbl, albl, blbl, clbl) =
   draw A--B--C--cycle;
-
-  % Angles
-  draw_angle(B,A,C,1);
-  draw_angle(C,B,A,2);
-  draw_angle(A,C,B,3);
   
   % Labels
   label.bot(Albl, A);
   label.bot(Blbl, B);
   label.top(Clbl, C);
   
-  label.rt(albl, midpoint(B,C));
-  label.lft(blbl, midpoint(A,C));
+  label.urt(albl, midpoint(B,C));
+  label.ulft(blbl, midpoint(A,C));
   label.bot(clbl, midpoint(A,B));
+enddef;
+
+def draw_triangle_with_angles(expr A, B, C, Albl, Blbl, Clbl, albl, blbl, clbl) =
+  draw_triangle(A, B, C, Albl, Blbl, Clbl, albl, blbl, clbl);
+
+  % Angles
+  draw_angle(B,A,C,1);
+  draw_angle(C,B,A,2);
+  draw_angle(A,C,B,3);
 enddef;
 
 
@@ -455,8 +459,6 @@ endfig;
 % Figure 14
 beginfig(14);
 
-
-
 pair A, B, C, Ao, Bo, Co;
 
 A := (0,0.5u);
@@ -464,14 +466,49 @@ B := (4u,0);
 C := (1.5u,5u);
 
 % Draw first triangle
-draw_triangle(A, B, C, btex $A$ etex, btex $B$ etex, btex $C$ etex, btex $a$ etex, btex $b$ etex, btex $c$ etex);
+draw_triangle_with_angles(A, B, C, btex $A$ etex, btex $B$ etex, btex $C$ etex, btex $a$ etex, btex $b$ etex, btex $c$ etex);
 
 % Draw smaller triangle
 Ao = (xpart (0.5*A) + 5u, ypart (0.5*A) + 1u);
 Bo = (xpart (0.5*B) + 5u, ypart (0.5*B) + 1u);
 Co = (xpart (0.5*C) + 5u, ypart (0.5*C) + 1u);
 
-draw_triangle(Ao, Bo, Co, btex $A_1$ etex, btex $B_1$ etex, btex $C_1$ etex, btex $a_1$ etex, btex $b_1$ etex, btex $c_1$ etex);
+draw_triangle_with_angles(Ao, Bo, Co, btex $A_1$ etex, btex $B_1$ etex, btex $C_1$ etex, btex $a_1$ etex, btex $b_1$ etex, btex $c_1$ etex);
+
+endfig;
+
+% Figure 15
+beginfig(15);
+
+pair A, B, C;
+
+A = (0, 0);
+B = (6u,0);
+C = (6u,3u);
+
+draw_triangle(A, B, C, btex $A$ etex, btex $C$ etex, btex $B$ etex, btex $a$ etex, btex $c$ etex, btex $b$ etex);
+
+draw (xpart B-0.2u, ypart B)--(xpart B-0.2u, ypart B+0.2u)--(xpart B, ypart B+0.2u);
+
+endfig;
+
+% Figure 16
+beginfig(16);
+
+pair A, B, C, D;
+
+A = (0, 0);
+B = (6u,0);
+C = (2u,2.5u);
+D = (xpart C, 0);
+
+draw_triangle(A, B, C, btex $A$ etex, btex $B$ etex, btex $C$ etex, btex $a$ etex, btex $b$ etex, btex $c$ etex);
+
+draw D--C dashed evenly;
+
+draw (xpart D+0.2u, ypart D)--(xpart D+0.2u, ypart D+0.2u)--(xpart D, ypart D+0.2u);
+
+label.rt(btex $h_c$ etex, midpoint(C,D));
 
 endfig;
 
