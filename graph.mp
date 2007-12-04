@@ -2,7 +2,44 @@ u = 1cm;
 linewidth = 0.02u;
 dotwidth = 0.1u;
 
-def midpoint(expr a, b) = (.5[a,b]) enddef;
+def midpoint(expr a, b) = 
+  (.5[a,b]) 
+enddef;
+
+
+def draw_angle(expr A, O, B, n) =
+  draw_angle_(A,O,B,0.5u);
+  if n>1 : draw_angle_(A,O,B,0.45u); fi;
+  if n>2 : draw_angle_(A,O,B,0.4u);   fi;
+  if n>3 : draw_angle_(A,O,B,0.55u); fi;
+enddef;
+
+def draw_angle_(expr A,O,B,d) =
+  draw (O + d*unitvector(A-O))
+       { d*unitvector(A-O) rotated 90 }
+       ..
+       { d*unitvector(B-O) rotated 90 }
+       (O + d*unitvector(B-O));
+enddef;
+
+def draw_triangle(expr A, B, C, Albl, Blbl, Clbl, albl, blbl, clbl) =
+  draw A--B--C--cycle;
+
+  % Angles
+  draw_angle(B,A,C,1);
+  draw_angle(C,B,A,2);
+  draw_angle(A,C,B,3);
+  
+  % Labels
+  label.bot(Albl, A);
+  label.bot(Blbl, B);
+  label.top(Clbl, C);
+  
+  label.rt(albl, midpoint(B,C));
+  label.lft(blbl, midpoint(A,C));
+  label.bot(clbl, midpoint(A,B));
+enddef;
+
 
 % Figure 1
 beginfig(1);
@@ -385,25 +422,56 @@ endfig;
 % Figure 13
 beginfig(13);
 
-pair T, S.one, S.two, p.a, p.b;
+def parabel(expr a) = 2*a*a*u-8*a*u+7.5u enddef;
+
+pair T, S.one, S.two;
 path p;
+numeric xmin, xmax, xd;
 
-T=(2.5u,0.5u);
-p.a=(1.5u,3.5u);
-p.b=(3.5u,3.5u);
-
-for i=-2 step .1 until 2: a[i] = i*i*u+0.5u endfor;
+xmin=0.75;
+xmax=3.25;
+xd=0.1;
 
 % Axis
-drawarrow (0,1.5u)--(5u,1.5u);
-label.bot("(1)", (5u,1.5u));
-drawarrow (0.5u,0)--(0.5u,4u);
-label.lft("(2)", (0.5u,4u));
+drawarrow (0,0u)--(5u,0u);
+label.bot("(1)", (5u,0u));
+drawarrow (0.5u,-1u)--(0.5u,3u);
+label.lft("(2)", (0.5u,3u));
 
-draw a withpen pencircle scaled 1bp;
+draw (xmin*u,parabel(xmin)) for i=(xmin+xd) step xd until (xmax+xd): --(i*u,parabel(i)) endfor withpen pencircle scaled 1bp;
 
-%draw (0.5u,3.5u) for i=1.5 step .1 until 3.5: .. (i*u, i*i*u) endfor
-%    withpen pencircle scaled 1bp;
+% Roots
+S.one=(1.5u,0);
+S.two=(2.5u,0);
+dotlabel.llft(btex $S_1$ etex, S.one);
+dotlabel.lrt(btex $S_2$ etex, S.two);
+
+% Top
+T=(2u,-0.5u);
+dotlabel.bot(btex $T$ etex, T);
+
+endfig;
+
+% Figure 14
+beginfig(14);
+
+
+
+pair A, B, C, Ao, Bo, Co;
+
+A := (0,0.5u);
+B := (4u,0);
+C := (1.5u,5u);
+
+% Draw first triangle
+draw_triangle(A, B, C, btex $A$ etex, btex $B$ etex, btex $C$ etex, btex $a$ etex, btex $b$ etex, btex $c$ etex);
+
+% Draw smaller triangle
+Ao = (xpart (0.5*A) + 5u, ypart (0.5*A) + 1u);
+Bo = (xpart (0.5*B) + 5u, ypart (0.5*B) + 1u);
+Co = (xpart (0.5*C) + 5u, ypart (0.5*C) + 1u);
+
+draw_triangle(Ao, Bo, Co, btex $A_1$ etex, btex $B_1$ etex, btex $C_1$ etex, btex $a_1$ etex, btex $b_1$ etex, btex $c_1$ etex);
 
 endfig;
 
