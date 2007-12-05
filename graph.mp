@@ -6,7 +6,6 @@ def midpoint(expr a, b) =
   (.5[a,b]) 
 enddef;
 
-
 def draw_angle(expr A, O, B, n) =
   draw_angle_(A,O,B,0.5u);
   if n>1 : draw_angle_(A,O,B,0.45u); fi;
@@ -509,6 +508,38 @@ draw D--C dashed evenly;
 draw (xpart D+0.2u, ypart D)--(xpart D+0.2u, ypart D+0.2u)--(xpart D, ypart D+0.2u);
 
 label.rt(btex $h_c$ etex, midpoint(C,D));
+
+endfig;
+
+% Figure 17
+beginfig(17);
+
+% Axis
+drawarrow (0,0.5u)--(5u,0.5u);
+label.bot("(1)", (5u,0.5u));
+drawarrow (0.5u,0)--(0.5u,4u);
+label.lft("(2)", (0.5u,4u));
+
+pair f.a, f.b, a.a, a.b, a.c;
+path f;
+
+f.a = (0, 1.5u);
+f.b = (4.5u, 3.5u);
+f = f.a--f.b;
+
+draw f;
+
+label.rt(btex $f$ etex, f.b);
+label.ulft(btex $b$ etex, f intersectionpoint ((0.5u,0)--(0.5u,4u)));
+
+a.a = f intersectionpoint ((2u,0)--(2u,4u));
+a.b = f intersectionpoint ((3u,0)--(3u,4u));
+a.c = (xpart a.b, ypart a.a);
+
+draw a.a--a.c--a.b dashed withdots scaled 0.25;
+
+label.bot(btex $1$ etex, midpoint(a.a,a.c));
+label.rt(btex $a$ etex, midpoint(a.b,a.c));
 
 endfig;
 
