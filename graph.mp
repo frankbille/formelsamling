@@ -159,10 +159,11 @@ beginfig(4);
 pair A, B, C, D;
 numeric r;
 
-A = (0,0);
-B = (5u,0);
-C = (1u,4u);
-D = (xpart C, ypart A);
+resize = 0.75;
+A = resize*(0,0);
+B = resize*(5u,0);
+C = resize*(1u,4u);
+D = resize*(xpart C, ypart A);
 r = 0.2u;
 
 % Triangle
@@ -189,10 +190,11 @@ beginfig(5);
 pair A, B, C, D;
 numeric r;
 
-A = (0,0);
-B = (4u,0);
-C = (4u,4u);
-D = (0,4u);
+resize = 0.75;
+A = resize*(0,0);
+B = resize*(4u,0);
+C = resize*(4u,4u);
+D = resize*(0,4u);
 r = 0.2u;
 
 % Square
@@ -220,10 +222,11 @@ beginfig(6);
 pair A, B, C, D;
 numeric r;
 
-A = (0,0);
-B = (5u,0);
-C = (5u,4u);
-D = (0,4u);
+resize = 0.75;
+A = resize*(0,0);
+B = resize*(5u,0);
+C = resize*(5u,4u);
+D = resize*(0,4u);
 r = 0.2u;
 
 % Rectangle
@@ -251,11 +254,12 @@ beginfig(7);
 pair A, B, C, D, E;
 numeric r;
 
-A = (0,0);
-B = (5u,0);
-C = (6u,4u);
-D = (1u,4u);
-E = (xpart D, ypart A);
+resize = 0.75;
+A = resize*(0,0);
+B = resize*(5u,0);
+C = resize*(6u,4u);
+D = resize*(1u,4u);
+E = resize*(xpart D, ypart A);
 r = 0.2u;
 
 draw A--B--C--D--cycle;
@@ -282,11 +286,12 @@ beginfig(8);
 pair A, B, C, D, E;
 numeric r;
 
-A = (0,0);
-B = (6u,0);
-C = (4u,4u);
-D = (1u,4u);
-E = (xpart D, ypart A);
+resize = 0.75;
+A = resize*(0,0);
+B = resize*(6u,0);
+C = resize*(4u,4u);
+D = resize*(1u,4u);
+E = resize*(xpart D, ypart A);
 r = 0.2u;
 
 % Trapez
@@ -540,6 +545,37 @@ draw a.a--a.c--a.b dashed withdots scaled 0.25;
 
 label.bot(btex $1$ etex, midpoint(a.a,a.c));
 label.rt(btex $a$ etex, midpoint(a.b,a.c));
+
+endfig;
+
+% Figure 18
+beginfig(18);
+
+def parabel(expr a) = 3*a*a*u-9*a*u+7u enddef;
+
+pair T, S.one, S.two;
+path p;
+numeric xmin, xmax, xd;
+
+xmin=0.25;
+xmax=2.75;
+xd=0.1;
+
+% Axis
+drawarrow (0,1u)--(5u,1u);
+label.bot("(1)", (5u,1u));
+drawarrow (0.5u,0)--(0.5u,6u);
+label.lft("(2)", (0.5u,6u));
+
+draw (xmin*u,parabel(xmin)) for i=(xmin+xd) step xd until (xmax+xd): --(i*u,parabel(i)) endfor withpen pencircle scaled 1bp;
+
+label.rt(btex $p$ etex, ((xmax)*u, parabel(xmax)));
+
+% Roots
+S.one=(1u,1u);
+S.two=(2u,1u);
+dotlabel.llft(btex $x_1$ etex, S.one);
+dotlabel.lrt(btex $x_2$ etex, S.two);
 
 endfig;
 

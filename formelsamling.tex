@@ -1,10 +1,11 @@
-\documentclass[11pt,a4paper,landscape,twocolumn,fleqn,leqno]{article}
+\documentclass[11pt,a5paper,fleqn,leqno]{book}
 \usepackage[utf8x]{inputenc}
 \usepackage{ucs}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage[top=2.5cm, bottom=2.5cm, left=1.25cm, right=1.25cm]{geometry}
 \usepackage{ifpdf}
 \ifpdf
   \DeclareGraphicsRule{*}{mps}{*}{}
@@ -21,40 +22,157 @@
 \author{Frank Bille}
 \title{Formelsamling}
 
-\setlength{\columnsep}{1cm}
-\setlength{\marginparwidth}{0cm}
-\setlength{\topmargin}{0cm}
-\setlength{\textheight}{400pt}
-
 \begin{document}
+
+\setlength{\parindent}{0cm}
+
+\frontmatter
+
+\thispagestyle{empty}
+\setlength{\arrayrulewidth}{0.1cm}
+\null
+\vspace{3cm}
+\begin{flushright}
+  \begin{tabular}{r|}
+    \rule{0pt}{2ex} \\
+    \Huge \textsf{\textbf{Formelsamling}}
+    \rule{0pt}{4ex} \\
+    \large \textsf{Frank Bille Jensen}
+    \rule{0pt}{3ex} \\
+    \rule{0pt}{3ex} \\
+    \rule{0pt}{3ex} \\
+    \rule{0pt}{3ex} \\
+    \rule{0pt}{3ex} \\
+    \rule{0pt}{3ex} \\
+    \rule{0pt}{3ex} \\
+    \rule{0pt}{3ex} \\
+  \end{tabular}
+\end{flushright}
+\cleardoublepage
+\setlength{\arrayrulewidth}{0.4pt}
 
 \tableofcontents
 
+\mainmatter
+
+\pagestyle{headings}
+
+\chapter{Formler og regneregler}
+
 \newpage
 
-\setlength{\parindent}{0mm}
+\section{Areal og omkreds}
+
+\subsection{Rektangel}
+
+\includegraphics{graph.6}
+\\
+\\
+Højde $h$ \\
+Grundlinje $g$ \\
+Areal $A$
+\begin{equation}
+A = h \cdot g
+\end{equation}
+
+\subsection{Parallelogram}
+
+\includegraphics{graph.7}
+\\
+\\
+Højde $h$ \\
+Grundlinje $g$ \\
+Areal $A$
+\begin{equation}
+A = h \cdot g
+\end{equation}
+
+\subsection{Kvadrat}
+
+\includegraphics{graph.5}
+\\
+\\
+Sidelængde $a$ \\
+Areal $A$
+\begin{equation}
+A = a \cdot a = a^2
+\end{equation}
+
+\subsection{Trekant}
+
+\includegraphics{graph.4}
+\\
+\\
+Højde $h$ \\
+Grundlinje $g$ \\
+Areal $A$ \\
+Omkreds $O$
+\begin{equation}
+A = \frac{1}{2} \cdot h \cdot g
+\end{equation}
+\begin{equation}
+O = |AB| + |BC| + |CA|
+\end{equation}
+
+\subsection{Trapez}
+
+\includegraphics{graph.8}
+\\
+\\
+Højde $h$ \\
+Parallelle sider $a$ og $b$ \\
+Areal $A$
+\begin{equation}
+A = \frac{1}{2} \cdot h \cdot (a + b)
+\end{equation}
+
+\subsection{Cirkel}
+
+\includegraphics{graph.9}
+\\
+\\
+Radius $r$ \\
+Areal $A$ \\
+Omkreds $O$
+\begin{equation}
+A = \pi \cdot r^2
+\end{equation}
+
+\begin{equation}
+O = 2 \cdot \pi \cdot r
+\end{equation}
 
 \section{Brøker}
 
-\begin{equation}
+\begin{equation} \label{eq:taeller_naevner_det_samme}
+\frac{a}{a} = 1
+\end{equation}
+
+\begin{equation} \label{eq:konstant_gange_med_broek}
 a \cdot \frac{b}{c} = \frac{a \cdot b}{c} = \frac{a}{c} \cdot b
 \end{equation}
 
-\begin{equation}
+\begin{equation} \label{eq:broeker_med_ens_naevnere_plusminus}
 \frac{a}{b} \pm \frac{c}{b} = \frac{a \pm c}{b}
 \end{equation}
 
-\begin{equation}
+\begin{equation} \label{eq:broeker_med_forskellige_naevnere_plusminus}
 \frac{a}{b} \pm \frac{c}{d} = \frac{a \cdot d \pm c \cdot b}{b \cdot d}
 \end{equation}
 
-\begin{equation}
+\begin{equation} \label{eq:broeker_ganget_sammen}
 \frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d}
 \end{equation}
 
-\begin{equation}
+\begin{equation} \label{eq:forlaenge_en_broek}
+\frac{a}{b} = 1 \cdot \frac{a}{b} = \frac{c}{c} \cdot \frac{a}{b} = \frac{c \cdot a}{c \cdot b}
+\end{equation}
+
+\begin{equation} \label{eq:broeker_divideret}
 \frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a}{b} \cdot \frac{d}{c}
 \end{equation}
+
+\newpage
 
 \section{Procentregning}
 
@@ -62,29 +180,34 @@ Kapitalfremskrivning \\
 Startkapital $K_0$ \\
 Rentefod $r$ \\
 Kapital $K$ efter $n$ terminer
-
 \begin{equation}
 K = K_{0} \cdot \left(1+r\right)^{n}
 \end{equation}
-
+\\
+\\
 Gennemsnitlig procentvis ændring $r$
-
 \begin{equation}
 1+r = \sqrt[n]{\left(1+r_{1}\right) \cdot \left(1+r_{2}\right) \cdot ... \cdot \left(1+r_{n}\right)}
 \end{equation} 
 
+\newpage
+
 \section{Potensregneregler}
 
 \begin{equation}
-a^{r} \cdot a^{s} = a^{r+s}
+a^r = 1 \cdot a_0 \cdot a_1 \cdot ... \cdot a_r
 \end{equation}
 
 \begin{equation}
-\dfrac{a^{r}}{a^{s}} = a^{r-s}
+a^r \cdot a^s = a^{r+s}
 \end{equation}
 
 \begin{equation}
-\left(a^{r}\right)^{s} = a^{r \cdot s}
+\dfrac{a^r}{a^s} = a^{r-s}
+\end{equation}
+
+\begin{equation}
+\left(a^r\right)^s = a^{r \cdot s}
 \end{equation}
 
 \begin{equation}
@@ -111,55 +234,67 @@ a^{-r} = \dfrac{1}{a^{r}}
 \sqrt[s]{a^{r}} = a^{\frac{r}{s}}
 \end{equation}
 
+\vfill
+
 \section{Proportionalitet}
 
 Proportionale størrelse $x$ og $y$
-
 \begin{eqnarray}
 y & =&  k \cdot x \\
 \frac{y}{x} & = & k \nonumber
 \end{eqnarray}
-
+\\
+\\
 Omvendt proportionale størrelser $x$ og $y$
-
 \begin{eqnarray}
 y & = & c \cdot \frac{1}{x} \\
 x \cdot y & = & c \nonumber
 \end{eqnarray}
 
-\vfill
+\section{Cirkel}
+
+\includegraphics{graph.12}
+\\
+\\
+Ligning for cirkel med centrum i $C(a,b)$ og radius $r$
+\begin{equation}
+(x-a)^2 + (y-b)^2 = r^2
+\end{equation}
+
+\newpage
 
 \section{Koordinatsystem i planen}
 
 \includegraphics{graph.1}
 
 Afstanden $|AB|$ mellem to punkter $A(x_1,y_1)$ og $B(x_2,y_2)$
-
 \begin{equation}
 |AB| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}
 \end{equation}
-
+\\
+\\
 \includegraphics{graph.2}
 
 Midtpunkt $M$ af linjestykke $AB$
-
 \begin{equation}
 M\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right)
 \end{equation}
 
+\vfill
+
 \section{Linje}
 
 \includegraphics{graph.3}
-
+\\
+\\
 Ligninger for linjen $l$
-
 \begin{eqnarray}
 y & = & ax+b \\
 y-y_1 & = & a(x-x_1) \nonumber
 \end{eqnarray}
-
+\\
+\\
 Hældningskoefficent (stigningstal) $a$ for linjen $l$
-
 \begin{equation}
 a = \frac{y_2 - y_1}{x_2 - x_1}
 \end{equation}
@@ -167,55 +302,44 @@ a = \frac{y_2 - y_1}{x_2 - x_1}
 \begin{equation}
 a = \tan v
 \end{equation}
-
+\\
+\\
 \includegraphics{graph.10}
-
+\\
+\\
 Ortogonale linjer $l$ og $m$
-
 \begin{equation}
 l \perp m \Leftrightarrow a \cdot c = -1
 \end{equation}
-
+\\
+\\
 \includegraphics{graph.11}
-
+\\
+\\
 Afstand $\text{dist}(P,l)$ fra punktet $P(x_1,y_1)$ til linjen $l$ med ligningen $y = ax+b$
-
 \begin{equation}
 \text{dist}(P,l) = \frac{|ax_1 + b - y_1|}{\sqrt{a^2 + 1}}
 \end{equation}
 
 \vfill
 
-\section{Cirkel}
-
-\includegraphics{graph.12}
-
-Ligning for cirkel med centrum i $C(a,b)$ og radius $r$
-
-\begin{equation}
-(x-a)^2 + (y-b)^2 = r^2
-\end{equation}
-
-\newpage
-
 \section{Parabel}
 
 \includegraphics{graph.13}
-
+\\
+\\
 Ligning for parabel med symmetriakse parallel med andenaksen
-
 \begin{equation}
 y = ax^2 + bx +c
 \end{equation}
-
+\\
+\\
 Toppunkt $T$
-
 \begin{equation}
 T\left(\frac{-b}{2a}, \frac{-d}{4a}\right), \quad \text{hvor} \quad d = b^2 - 4ac
 \end{equation}
-
+\\
 Skæringspunkter $S_1$ og $S_2$ med førsteaksen
-
 \begin{equation}
 S_1\left(\frac{-b - \sqrt{d}}{2a}, 0\right), \quad S_2\left(\frac{-b + \sqrt{d}}{2a}, 0\right)
 \end{equation}
@@ -292,6 +416,8 @@ T & = & \frac{1}{2}h_c a \\
 
 \section{Polynomier}
 
+\subsection{Førstegradspolynomium}
+
 \includegraphics{graph.17}
 \\
 \\
@@ -299,6 +425,12 @@ Førstegradspolynomium, lineær funktion $f$
 \begin{equation}
 f(x) = ax+b
 \end{equation}
+
+\newpage
+
+\subsection{Andengradspolynomium}
+
+\includegraphics{graph.18}
 \\
 \\
 Andengradspolynomium $p$ med rødder $x_1$ og $x_2$
@@ -525,14 +657,19 @@ tan          & $0$ & $\dfrac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & -- \\
 
 \section{Differentialregning}
 
+Ligning for tangent $t$ i punktet $A(x_0,f(x_0))$
 \begin{equation}
 y = f(x_0) + f'(x_0)(x-x_0)
 \end{equation}
-
+\\
+\\
+Approximerede førstegradspolynomium $p$ for $f$ i tallet $x_0$
 \begin{equation}
 p(x) = f(x_0) + f'(x_0)(x-x_0)
 \end{equation}
-
+\\
+\\
+Regneregler for differentiation
 \begin{equation}
 \left(f \pm g\right)'(x) = f'(x) \pm g'(x)
 \end{equation}
@@ -610,98 +747,38 @@ I dette afsnit betegner $F$ en stamfunktion til $f$
  & = & F(g(b)) - F(g(a)) \nonumber
 \end{eqnarray}
 
-\section{Areal og omkreds}
+\chapter{Eksempler}
 
-\subsection{Trekant}
+\newpage
 
-\includegraphics{graph.4}
+\section{Brøker}
 
-Højde $h$ \\
-Grundlinje $g$ \\
-Areal $A$ \\
-Omkreds $O$
+Benytter: \eqref{eq:konstant_gange_med_broek}
 
-\begin{equation}
-A = \frac{1}{2} \cdot h \cdot g
-\end{equation}
+\[4 \cdot \frac{5}{4} = \frac{4 \cdot 5}{4} = \frac{4}{4} \cdot 5 = 5\]
+\\
+\\
+Benytter: \eqref{eq:broeker_med_forskellige_naevnere_plusminus}, \eqref{eq:broeker_ganget_sammen} og \eqref{eq:forlaenge_en_broek}
 
-\begin{equation}
-O = |AB| + |BC| + |CA|
-\end{equation}
+\[\frac{7}{2} - \frac{8}{6} = \frac{7 \cdot 6 - 8 \cdot 2}{2 \cdot 6} = \frac{42 - 16}{12} = \frac{26}{12} = \frac{13 \cdot 2}{6 \cdot 2} = \frac{13}{6} \cdot \frac{2}{2} = \frac{13}{6}\]
+\\
+\\
+Benytter: \eqref{eq:broeker_ganget_sammen}, \eqref{eq:forlaenge_en_broek} og \eqref{eq:broeker_divideret}
 
-\vfill
+\[\frac{\frac{3}{4}}{\frac{9}{4}} = \frac{3}{4} \cdot \frac{4}{9} = \frac{3 \cdot 4}{4 \cdot 9} = \frac{12}{36} = \frac{1 \cdot 12}{3 \cdot 12} = \frac{1}{3} \cdot \frac{12}{12} = \frac{1}{3}\]
 
-\subsection{Kvadrat}
+\section{Potensregneregler}
 
-\includegraphics{graph.5}
+\[2^7 = 1 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 = 128\]
 
-Sidelængde $a$ \\
-Areal $A$
+\[3^3 \cdot 3^4 = (3 \cdot 3 \cdot 3) \cdot (3 \cdot 3 \cdot 3 \cdot 3) = 3 \cdot 3 \cdot 3 \cdot 3 \cdot 3 \cdot 3 \cdot 3 = 3^7\]
 
-\begin{equation}
-A = a \cdot a = a^2
-\end{equation}
+\[2^0 = 5^0 = 3572954^0 = 1\]
 
-\vfill
+\[\sqrt{3} \cdot 3^2 = 3^{\frac{1}{2}} \cdot 3^2 = 3^{\frac{1}{2}+2} = 3^{2\frac{1}{2}}\]
 
-\subsection{Rectangle}
+\[\sqrt{5}^2 = 5^{\frac{1}{2}^2} = 5^{\frac{1}{2} \cdot 2} = 5^1 = 5\]
 
-\includegraphics{graph.6}
-
-Højde $h$ \\
-Grundlinje $g$ \\
-Areal $A$
-
-\begin{equation}
-A = h \cdot g
-\end{equation}
-
-\vfill
-
-\subsection{Parallelogram}
-
-\includegraphics{graph.7}
-
-Højde $h$ \\
-Grundlinje $g$ \\
-Areal $A$
-
-\begin{equation}
-A = h \cdot g
-\end{equation}
-
-\vfill
-
-\subsection{Trapez}
-
-\includegraphics{graph.8}
-
-Højde $h$ \\
-Parallelle sider $a$ og $b$ \\
-Areal $A$
-
-\begin{equation}
-A = \frac{1}{2} \cdot h \cdot (a + b)
-\end{equation}
-
-\vfill
-
-\subsection{Cirkel}
-
-\includegraphics{graph.9}
-
-Radius $r$ \\
-Areal $A$ \\
-Omkreds $O$
-
-\begin{equation}
-A = \pi \cdot r^2
-\end{equation}
-
-\begin{equation}
-O = 2 \cdot \pi \cdot r
-\end{equation}
-
-\vfill
+\[\sqrt{5^2} = 5^{2^{\frac{1}{2}}} = 5^{2 \cdot \frac{1}{2}} = 5^1 = 5\]
 
 \end{document}
