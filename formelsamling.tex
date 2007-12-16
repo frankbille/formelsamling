@@ -99,7 +99,7 @@ Areal $A$
 A = a \cdot a = a^2
 \end{equation}
 
-\subsection{Trekant}
+\subsection{Trekant} \label{eq:areal_trekant}
 
 \includegraphics{graph.4}
 \\
@@ -386,12 +386,12 @@ y = ax^2 + bx +c
 \\
 \\
 Toppunkt $T$
-\begin{equation}
+\begin{equation} \label{eq:parabel_toppunkt}
 T\left(\frac{-b}{2a}, \frac{-d}{4a}\right), \quad \text{hvor} \quad d = b^2 - 4ac
 \end{equation}
 \\
 Skæringspunkter $S_1$ og $S_2$ med førsteaksen
-\begin{equation}
+\begin{equation} \label{eq:parabel_roedder}
 S_1\left(\frac{-b - \sqrt{d}}{2a}, 0\right), \quad S_2\left(\frac{-b + \sqrt{d}}{2a}, 0\right)
 \end{equation}
 
@@ -420,8 +420,8 @@ c_1 & = & k \cdot c \nonumber
 \includegraphics{graph.15}
 \\
 \\
-Pythagoras' læresætning 
-\begin{equation}
+Pythagoras' læresætning, hvor $a$ og $b$ er katetere og $c$ er hypotenusen.
+\begin{equation} \label{eq:trekant_pythagoras}
 a^2 + b^2 = c^2
 \end{equation}
 
@@ -814,6 +814,7 @@ De fleste opgaver er lavet så der ikke behøves lommeregner.
 
 \begin{enumerate}
 \item \label{op:areal_1} Beregn arealet af et \textit{rektangel} når højden er 4cm og grundlinjen er 7cm.
+\item \label{op:areal_2} Beregn arealet af en trekant med højden 2cm og grundlinjen 7cm;
 \end{enumerate}
 
 \section{Brøker}
@@ -856,6 +857,23 @@ Reducér følgende potenser
 \item \label{op:potens_6} $\sqrt{5^2}$
 \end{enumerate}
 
+\section{Parabel}
+
+\begin{enumerate}
+\item \label{op:parabel_1} Find rødderne og toppunktet i andengradsligningen $y = 2x^2 - 5x + 2$
+\end{enumerate}
+
+\section{Trekant}
+
+\begin{enumerate}
+\item \label{op:trekant_1}
+Beregn længden af linjestykket $c$. \\
+\includegraphics{graph.30}
+\item \label{op:trekant_2}
+Beregn længden af linjestykket $b$. \\
+\includegraphics{graph.31}
+\end{enumerate}
+
 \section{Differentialregning}
 
 \begin{enumerate}
@@ -874,7 +892,14 @@ Alle løsningerne er så detaljerede som muligt og vil for det meste indeholde r
 \begin{displaymath}\begin{array}{l}
 h = 4\text{cm}\\
 g = 7\text{cm}\\
-A = h \cdot g = 4\text{cm} \cdot 7\text{cm} = \underline{\underline{28\text{cm}}}
+A = h \cdot g = 4\text{cm} \cdot 7\text{cm} = \underline{\underline{28\text{cm}^2}}
+\end{array}\end{displaymath}
+
+\ref{op:areal_2}. Benytter \eqref{eq:areal_trekant}
+\begin{displaymath}\begin{array}{l}
+h = 2\text{cm}\\
+g = 7\text{cm}\\
+A = \frac{1}{2} \cdot h \cdot g = \frac{1}{2} \cdot 2\text{cm} \cdot 7\text{cm} = \underline{\underline{7\text{cm}^2}}
 \end{array}\end{displaymath}
 
 \section{Brøker}
@@ -944,6 +969,30 @@ b = 110 \text{m} \\
 
 \ref{op:potens_6}. Benytter: \eqref{eq:potens_kvadratrod_potens}
 \[\sqrt{5^2} = 5^{2^{\frac{1}{2}}} = 5^{2 \cdot \frac{1}{2}} = 5^1 = \underline{\underline{5}}\]
+
+\section{Parabel}
+
+\ref{op:parabel_1}.  og \eqref{eq:parabel_toppunkt}. \\
+For at finde rødder benytter vi \eqref{eq:parabel_roedder}. Vi skal først udregne diskriminanten.
+\[d = b^2 - 4ac = (-5)^2 - 4 \cdot 2 \cdot 2 = 25 - 16 = \underline{9}\]
+Dernæst kan vi beregne de to rødder.
+\begin{displaymath}\begin{array}{l}
+x_1 = \frac{}{}
+\end{array}\end{displaymath}
+
+\section{Trekant}
+
+\ref{op:trekant_1}. Benytter \eqref{eq:trekant_pythagoras}. Vi har fået oplyst de to katetere $a = 3$ og $b = 4$
+\begin{displaymath}\begin{array}{l}
+c^2 = a^2 + b^2 \Leftrightarrow c = \sqrt{a^2 + b^2} \\
+c = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = \underline{\underline{5}}
+\end{array}\end{displaymath}
+
+\ref{op:trekant_2}. Benytter \eqref{eq:trekant_pythagoras}. Vi har fået oplyst kateteren $a = 6$ og hypotenusen $c = 10$
+\begin{displaymath}\begin{array}{l}
+c^2 = a^2 + b^2 \Leftrightarrow c^2 - a^2 = b^2 \Leftrightarrow b = \sqrt{c^2 - a^2} \\
+b = \sqrt{10^2 - 6^2} = \sqrt{100 - 36} = \sqrt{64} = \underline{\underline{8}}
+\end{array}\end{displaymath}
 
 \section{Differentialregning}
 

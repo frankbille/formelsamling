@@ -349,25 +349,37 @@ endfig;
 % Figure 10
 beginfig(10);
 
-pair l.a, l.b, m.a, m.b;
+numeric r;
+pair l.a, l.b, m.a, m.b, M;
+path l, m;
 
 alpha := 25;
-l.a=(0.2u,0.5u);
+l.a=(-0.3u,-0.5u);
 l.b=l.a + 4.5u*dir alpha;
-m.a=(2u,3.75u);
+m.a=(1.5u,2.75u);
 m.b=m.a + -3.5u*dir (alpha+90);
 
+l = l.a--l.b;
+m = m.a--m.b;
+
+M = l intersectionpoint m;
+
+r = 0.15u;
+
 % Axis
-drawarrow (0,1u)--(5u,1u);
-label.bot("(1)", (5u,1u));
-drawarrow (0.5u,0)--(0.5u,4u);
-label.lft("(2)", (0.5u,4u));
+drawarrow (-0.5u,0)--(4.5u,0);
+label.bot("(1)", (4.5u,0));
+drawarrow (0,-1u)--(0,4u);
+label.lft("(2)", (0,4u));
 
 % Line l
-draw l.a--l.b;
+draw l;
 
 % Line m
-draw m.a--m.b;
+draw m;
+
+% 90 degree angle
+draw ((r, 0)--(r, r)--(0, r)) rotated 25 shifted M;
 
 % labels
 label.llft(btex $l$ etex, l.a);
@@ -381,31 +393,42 @@ endfig;
 % Figure 11
 beginfig(11);
 
-pair l.a, l.b, P, dq, dx;
+numeric r;
+pair l.a, l.b, P, dq, dx, I;
+path l, Pl;
 
 alpha := 15;
-l.a=(1u,1.5u);
+l.a=(0.5u,1u);
 l.b=l.a + 3u*dir alpha;
-P=(1.75u,3.5u);
+P=(1.25u,3u);
 dq=P + -3.5u*dir (alpha+90);
 dx=whatever [l.a,l.b];
 dx=whatever [P,dq];
 
+l = l.a--l.b;
+Pl = P--dx;
+
+I = l intersectionpoint Pl;
+r = 0.15u;
+
 % Axis
-drawarrow (0,0.5u)--(5u,0.5u);
-label.bot("(1)", (5u,0.5u));
-drawarrow (0.5u,0)--(0.5u,4u);
-label.lft("(2)", (0.5u,4u));
+drawarrow (-0.5u,0)--(5u,0);
+label.bot("(1)", (5u,0));
+drawarrow (0,-0.5u)--(0,4u);
+label.lft("(2)", (0,4u));
 
 % Line l
-draw l.a--l.b;
+draw l;
 label.rt(btex $l$ etex, l.b);
 
 % Point P
 dotlabel.rt(btex $P(x_1,y_1)$ etex, P);
 
 % Distance line from P to line l
-draw P--dx dashed evenly;
+draw Pl dashed evenly;
+
+% 90 degree angle
+draw ((r,0)--(r,r)--(0,r)) rotated 15 shifted I;
 
 endfig;
 
@@ -1095,5 +1118,39 @@ label.bot(btex $x_0$ etex, (xpart A, 0));
 label.lft(btex $f(x_0)$ etex, (0, ypart A));
 
 endfig; % 29
+
+% Figure 30
+beginfig(30);
+
+pair A, B, C;
+
+A = (0,0);
+B = (4u,0);
+C = (4u,3u);
+
+r = 0.15u;
+
+draw_triangle(A, B, C, btex $A$ etex, btex $C$ etex, btex $B$ etex, btex $3$ etex, btex $c$ etex, btex $4$ etex);
+
+draw (xpart B-r, 0)--(xpart B-r, r)--(xpart B, r);
+
+endfig; % 30
+
+% Figure 31
+beginfig(31);
+
+pair A, B, C;
+
+A = (0,0);
+B = (4u,0);
+C = (4u,3u);
+
+r = 0.15u;
+
+draw_triangle(A, B, C, btex $A$ etex, btex $C$ etex, btex $B$ etex, btex $b$ etex, btex $10$ etex, btex $6$ etex);
+
+draw (xpart B-r, 0)--(xpart B-r, r)--(xpart B, r);
+
+endfig; % 31
 
 end;
