@@ -99,7 +99,7 @@ Areal $A$
 A = a \cdot a = a^2
 \end{equation}
 
-\subsection{Trekant} \label{eq:areal_trekant}
+\subsection{Trekant}
 
 \includegraphics{graph.4}
 \\
@@ -108,7 +108,7 @@ Højde $h$ \\
 Grundlinje $g$ \\
 Areal $A$ \\
 Omkreds $O$
-\begin{equation}
+\begin{equation} \label{eq:areal_trekant}
 A = \frac{1}{2} \cdot h \cdot g
 \end{equation}
 \begin{equation}
@@ -135,11 +135,11 @@ A = \frac{1}{2} \cdot h \cdot (a + b)
 Radius $r$ \\
 Areal $A$ \\
 Omkreds $O$
-\begin{equation}
+\begin{equation} \label{eq:areal_cirkel}
 A = \pi \cdot r^2
 \end{equation}
 
-\begin{equation}
+\begin{equation} \label{eq:omkreds_cirkel}
 O = 2 \cdot \pi \cdot r
 \end{equation}
 
@@ -339,14 +339,14 @@ M\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right)
 \\
 \\
 Ligninger for linjen $l$
-\begin{eqnarray}
+\begin{eqnarray} \label{eq:linje_ligning}
 y     & = & ax+b \\
 y-y_1 & = & a(x-x_1) \nonumber
 \end{eqnarray}
 \\
 \\
 Hældningskoefficent (stigningstal) $a$ for linjen $l$
-\begin{equation}
+\begin{equation} \label{eq:linje_haeldning}
 a = \frac{y_2 - y_1}{x_2 - x_1}
 \end{equation}
 \begin{equation}
@@ -814,7 +814,8 @@ De fleste opgaver er lavet så der ikke behøves lommeregner.
 
 \begin{enumerate}
 \item \label{op:areal_1} Beregn arealet af et \textit{rektangel} når højden er 4cm og grundlinjen er 7cm.
-\item \label{op:areal_2} Beregn arealet af en trekant med højden 2cm og grundlinjen 7cm;
+\item \label{op:areal_2} Beregn arealet af en trekant med højden 2cm og grundlinjen 7cm.
+\item \label{op:areal_3} En cirkel har en diameter på 8cm. Hvor stor er omkredsen på denne cirkel?
 \end{enumerate}
 
 \section{Brøker}
@@ -855,6 +856,12 @@ Reducér følgende potenser
 \item \label{op:potens_4} $\sqrt{3} \cdot 3^2$
 \item \label{op:potens_5} $\sqrt{5}^2$
 \item \label{op:potens_6} $\sqrt{5^2}$
+\end{enumerate}
+
+\section{Linje}
+
+\begin{enumerate}
+\item \label{op:linje_1} Den rette linje $l$ går i gennem to punkter $A(1,3)$ og $B(2,5)$. Find ligningen for linjen $l$
 \end{enumerate}
 
 \section{Parabel}
@@ -901,6 +908,11 @@ h = 2\text{cm}\\
 g = 7\text{cm}\\
 A = \frac{1}{2} \cdot h \cdot g = \frac{1}{2} \cdot 2\text{cm} \cdot 7\text{cm} = \underline{\underline{7\text{cm}^2}}
 \end{array}\end{displaymath}
+
+\ref{op:areal_3}. Diameteren $d$ på en cirkel er 2 gange radius. Det vil sige at radius er
+\[r = \frac{d}{2} = \frac{8\text{cm}}{2} = \underline{4\text{cm}}\]
+Ved at benytte \eqref{eq:omkreds_cirkel}, kan vi så beregne omkredsen.
+\[O = 2 \cdot \pi \cdot r = 2 \cdot \pi \cdot 4\text{cm} \simeq \underline{\underline{25,13\text{cm}}}\]
 
 \section{Brøker}
 
@@ -970,14 +982,35 @@ b = 110 \text{m} \\
 \ref{op:potens_6}. Benytter: \eqref{eq:potens_kvadratrod_potens}
 \[\sqrt{5^2} = 5^{2^{\frac{1}{2}}} = 5^{2 \cdot \frac{1}{2}} = 5^1 = \underline{\underline{5}}\]
 
+\section{Linje}
+
+\ref{op:linje_1}. Ligningen for en linje er ifølge \eqref{eq:linje_ligning} $y = ax+b$. For at bestemme ligningen for $l$ skal vi bestemme $a$ og $b$. For at bestemme $a$ benytter vi \eqref{eq:linje_haeldning}. Til dette kræves der to punkter. Dem har vi fået opgivet i form af $A(1,3)$ og $B(2,5)$. Det vil sige at $x_1 = 1$, $y_1 = 3$, $x_2 = 2$ og $y_2 = 5$.
+\[a = \dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{5-3}{2-1} = \dfrac{2}{1} = \underline{2}\]
+Nu skal vi finde $b$. Dette gør vi ved at isolere $b$ i ligningen for en ret linje og derefter sætte $a$ og et af punkterne (vi kan jo vælge at benytte $A$) ind i ligningen.
+\begin{displaymath}\begin{array}{l}
+y = ax+b \Leftrightarrow b = y-ax \\
+b = 3 - 2 \cdot 1 = \underline{1}
+\end{array}\end{displaymath}
+Vi har nu fundet både $a$ og $b$ og kan nu konstruere ligningen for linjen $l$:
+\[\underline{\underline{y = 2x+1}}\]
+
 \section{Parabel}
 
-\ref{op:parabel_1}.  og \eqref{eq:parabel_toppunkt}. \\
+\ref{op:parabel_1}. $a = 2$, $b = -5$ og $c = 2$ \\
 For at finde rødder benytter vi \eqref{eq:parabel_roedder}. Vi skal først udregne diskriminanten.
 \[d = b^2 - 4ac = (-5)^2 - 4 \cdot 2 \cdot 2 = 25 - 16 = \underline{9}\]
 Dernæst kan vi beregne de to rødder.
 \begin{displaymath}\begin{array}{l}
-x_1 = \frac{}{}
+x_1 = \frac{-b-\sqrt{d}}{2a} = \frac{-(-5) - \sqrt{9}}{2 \cdot 2} = \frac{5 - 3}{4} = \frac{1}{2} \\
+x_2 = \frac{-b+\sqrt{d}}{2a} = \frac{-(-5) + \sqrt{9}}{2 \cdot 2} = \frac{5 + 3}{4} = 2 \\
+\underline{\underline{x = \frac{1}{2} \vee x = 2}}
+\end{array}\end{displaymath}
+Nu skal vi beregne toppunktet for parablen. Til dette benytter vi \eqref{eq:parabel_toppunkt}
+\begin{displaymath}\begin{array}{l}
+T = \left(x_0,y_0\right) = \left(\frac{-b}{2a},\frac{-d}{4a}\right) \\
+x_0 = \frac{-b}{2a} = \frac{-(-5)}{2 \cdot 2} = \underline{\frac{5}{4}} \\
+y_0 = \frac{-d}{4a} = \frac{-9}{4 \cdot 2} = \underline{-\frac{9}{8}} \\
+T = \underline{\underline{\left(\frac{5}{4}, -\frac{9}{8}\right)}}
 \end{array}\end{displaymath}
 
 \section{Trekant}
