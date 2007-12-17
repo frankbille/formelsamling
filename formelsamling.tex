@@ -7,7 +7,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{enumerate}
-\usepackage[top=2.5cm, bottom=2.5cm, left=1.25cm, right=1.25cm]{geometry}
+\usepackage[top=2.5cm, bottom=2.5cm, left=1.5cm, right=1cm]{geometry}
 \usepackage{ifpdf}
 \ifpdf
   \DeclareGraphicsRule{*}{mps}{*}{}
@@ -29,28 +29,6 @@
 \setlength{\parindent}{0cm}
 
 \frontmatter
-
-\thispagestyle{empty}
-\setlength{\arrayrulewidth}{0.1cm}
-\null
-\begin{flushright}
-  \begin{tabular}{r|}
-    \rule{0pt}{3ex} \\
-    \rule{0pt}{3ex} \\
-    \Huge \textsf{\textbf{Formelsamling}}
-    \rule{0pt}{4ex} \\
-    \large \textsf{Frank Bille Jensen}
-    \rule{0pt}{3ex} \\
-    \rule{0pt}{3ex} \\
-    \rule{0pt}{3ex} \\
-    \includegraphics[width=9.5cm]{cover.pdf} \\
-    \rule{0pt}{3ex} \\
-    \rule{0pt}{3ex} \\
-    \rule{0pt}{3ex} \\
-  \end{tabular}
-\end{flushright}
-\cleardoublepage
-\setlength{\arrayrulewidth}{0.4pt}
 
 \tableofcontents
 
@@ -291,8 +269,8 @@ a^{-r} = \dfrac{1}{a^{r}}
 
 Proportionale størrelse $x$ og $y$
 \begin{eqnarray}
-y & =&  k \cdot x \\
-\frac{y}{x} & = & k \nonumber
+\; y & =&  k \cdot x \\
+\; \frac{y}{x} & = & k \nonumber
 \end{eqnarray}
 \\
 \\
@@ -308,7 +286,7 @@ x \cdot y & = & c \nonumber
 \\
 \\
 Ligning for cirkel med centrum i $C(a,b)$ og radius $r$
-\begin{equation}
+\begin{equation} \label{eq:cirkel_ligning}
 (x-a)^2 + (y-b)^2 = r^2
 \end{equation}
 
@@ -459,7 +437,7 @@ Sinusrelation
 Trekantens areal $T$ \\
 Højden på $c$ = $h_c$
 \begin{eqnarray}
-T & = & \frac{1}{2}h_c a \\
+\; T & = & \frac{1}{2}h_c a \\
 & = & \frac{1}{2}ab\sin C \nonumber
 \end{eqnarray}
 
@@ -493,7 +471,7 @@ p(x) & = & ax^2 + bx + c \\
 \\
 Rødder i andengradspolynomium $p$
 \begin{equation}
-x_1 = \frac{-b - \sqrt{d}}{2a}, \quad \frac{-b + \sqrt{d}}{2a}, \quad \text{hvor} \quad d = b^2 - 4ac
+x_1 = \frac{-b - \sqrt{d}}{2a}, \quad x_2 = \frac{-b + \sqrt{d}}{2a}, \quad \text{hvor} \quad d = b^2 - 4ac
 \end{equation}
 \\
 \\
@@ -587,7 +565,7 @@ a = \sqrt[x_2-x_1]{\frac{y_2}{y_1}}
 \\
 En eksponentielt voksende funktion $f$ med fremskrivningsfaktor $a$, hvor $a > 1$, dvs. med vækstrate $r$, hvor $r > 0$
 \begin{eqnarray}
-f(x) & = & b \cdot a^x \\
+\; f(x) & = & b \cdot a^x \\
  & = & b \cdot (1+r)^x \nonumber \\
  & = & b \cdot e^{kx}, \quad \text{hvor} \quad k = \ln a \nonumber
 \end{eqnarray}
@@ -613,7 +591,7 @@ b \cdot a^x = b \cdot e^{kx} = b \cdot 2^{\frac{x}{T_2}}
 \\
 En eksponentielt aftagende funktion $f$ med fremskrivningsfaktor $a$, hvor $0 < a < 1$, dvs. med vækstrate $-r$, hvor $r > 0$
 \begin{eqnarray}
-f(x) & = & b \cdot a^x \\
+\; f(x) & = & b \cdot a^x \\
  & = & b \cdot (1-r)^x \nonumber \\
  & = & b \cdot e^{-kx}, \quad \text{hvor} \quad k = -\ln a \nonumber
 \end{eqnarray}
@@ -670,7 +648,7 @@ a = \frac{\log y_2 - \log y_1}{\log x_2 - \log x_1} = \frac{\ln y_2 - \ln y_1}{\
 \end{equation}
 \\
 \\
-Funktion $f$ defineres som $f(x) = b \cdot x^a$. $f(x)$ fremskrives med faktor $q^a$, når $x$ fremskrives med faktor $q$
+Funktionen $f$ defineres som $f(x) = b \cdot x^a$. $f(x)$ fremskrives med faktor $q^a$, når $x$ fremskrives med faktor $q$
 \begin{equation}
 f(q \cdot x) = q^a \cdot f(x)
 \end{equation}
@@ -687,19 +665,19 @@ Aflæsning af $\cos x$ og $\sin x$
 (\cos x)^2 + (\sin x)^2 = 1
 \end{equation}
 \begin{eqnarray}
-\cos(x + 2\pi) & = & \cos x \\
+\; \cos(x + 2\pi) & = & \cos x \\
 \sin(x + 2\pi) & = & \sin x \nonumber
 \end{eqnarray}
 \begin{eqnarray}
-\cos(-x) & = & \cos x \\
+\; \cos(-x) & = & \cos x \\
 \sin(-x) & = & - \sin x \nonumber
 \end{eqnarray}
 \begin{eqnarray}
-\cos(\pi - x) & = & - \cos x \\
+\; \cos(\pi - x) & = & - \cos x \\
 \sin(\pi - x) & = & \sin x \nonumber
 \end{eqnarray}
 \begin{eqnarray}
-\cos\left(\frac{\pi}{2}-x\right) & = & \sin x \\
+\; \cos\left(\frac{\pi}{2}-x\right) & = & \sin x \\
 \sin\left(\frac{\pi}{2}-x\right) & = & \cos x \nonumber
 \end{eqnarray}
 
@@ -736,11 +714,11 @@ p(x) = f(x_0) + f'(x_0)(x-x_0)
 \\
 Regneregler for differentiation
 \begin{eqnarray}
-\left(f \pm g\right)'(x)     & = & f'(x) \pm g'(x) \\
-\left(f \cdot g\right)'(x)   & = & f'(x) \cdot g(x) + f(x) \cdot g'(x) \\
-\left(k \cdot f\right)'(x)   & = & k \cdot f'(x) \\
-\left(\frac{f}{g}\right)'(x) & = & \dfrac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{\left(g(x)\right)^2} \\
-\left(f \circ g\right)'(x)   & = & \left(f\left(g(x)\right)\right)' = f'\left(g(x)\right) \cdot g'(x)
+\quad \left(f \pm g\right)'(x)     & = & f'(x) \pm g'(x) \\
+\quad \left(f \cdot g\right)'(x)   & = & f'(x) \cdot g(x) + f(x) \cdot g'(x) \\
+\quad \left(k \cdot f\right)'(x)   & = & k \cdot f'(x) \\
+\quad \left(\frac{f}{g}\right)'(x) & = & \dfrac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{\left(g(x)\right)^2} \\
+\quad \left(f \circ g\right)'(x)   & = & \left(f\left(g(x)\right)\right)' = f'\left(g(x)\right) \cdot g'(x)
 \end{eqnarray}
 
 \vfill
@@ -798,7 +776,7 @@ I dette afsnit betegner $F$ en stamfunktion til $f$
 \end{equation}
 
 \begin{eqnarray}
-\int_a^b f(g(x)) \cdot g'(x)\, \mathrm{d}x & = & \int_{g(a)}^{g(b)} f(t)\, \mathrm{d}t  \quad \mbox{hvor} \quad t = g(x) \\
+\quad \int_a^b f(g(x)) \cdot g'(x)\, \mathrm{d}x & = & \int_{g(a)}^{g(b)} f(t)\, \mathrm{d}t  \quad \mbox{hvor} \quad t = g(x) \\
  & = & F(g(b)) - F(g(a)) \nonumber
 \end{eqnarray}
 
@@ -854,8 +832,16 @@ Reducér følgende potenser
 \item \label{op:potens_2} $3^3 \cdot 3^4$
 \item \label{op:potens_3} $2^0$
 \item \label{op:potens_4} $\sqrt{3} \cdot 3^2$
-\item \label{op:potens_5} $\sqrt{5}^2$
-\item \label{op:potens_6} $\sqrt{5^2}$
+\item \label{op:potens_5} $\dfrac{7^{11}}{7^8}$
+\item \label{op:potens_6} $\dfrac{9^{64}}{9^{97}} \cdot 9^{33}$
+\item \label{op:potens_7} $\sqrt{5}^2$
+\item \label{op:potens_8} $\sqrt{5^2}$
+\end{enumerate}
+
+\section{Cirkel}
+
+\begin{enumerate}
+\item \label{op:cirkel_1} Opstil ligningen for cirklen med centrum i punktet $A(-3,6)$ og radius 4.
 \end{enumerate}
 
 \section{Linje}
@@ -976,11 +962,22 @@ b = 110 \text{m} \\
 \ref{op:potens_4}. Benytter: \eqref{eq:potens_kvadratrod} og \eqref{eq:potens_gange}
 \[\sqrt{3} \cdot 3^2 = 3^{\frac{1}{2}} \cdot 3^2 = 3^{\frac{1}{2}+2} = \underline{\underline{3^{2\frac{1}{2}}}}\]
 
-\ref{op:potens_5}. Benytter: \eqref{eq:potens_kvadratrod} og \eqref{eq:potens_potens}
+\ref{op:potens_5}. Benytter: \eqref{eq:potens_dividere}
+\[\dfrac{7^{11}}{7^8} = 7^{11-8} = \underline{\underline{7^3}} = \underline{\underline{21}}\]
+
+\ref{op:potens_6}. Benytter: \eqref{eq:potens_gange} og \eqref{eq:potens_dividere}
+\[\dfrac{9^{64}}{9^{97}} \cdot 9^{33} = 9^{64-97} \cdot 9^{33} = 9^{-33+33} = 9^{0} = \underline{\underline{1}}\]
+
+\ref{op:potens_7}. Benytter: \eqref{eq:potens_kvadratrod} og \eqref{eq:potens_potens}
 \[\sqrt{5}^2 = 5^{\frac{1}{2}^2} = 5^{\frac{1}{2} \cdot 2} = 5^1 = \underline{\underline{5}}\]
 
-\ref{op:potens_6}. Benytter: \eqref{eq:potens_kvadratrod_potens}
+\ref{op:potens_8}. Benytter: \eqref{eq:potens_kvadratrod_potens}
 \[\sqrt{5^2} = 5^{2^{\frac{1}{2}}} = 5^{2 \cdot \frac{1}{2}} = 5^1 = \underline{\underline{5}}\]
+
+\section{Cirkel}
+
+\ref{op:cirkel_1}. Vi benytter \eqref{eq:cirkel_ligning}, hvor cirklens centrum $C(a,b)$ er lig med vores centrum $A(-3,6)$. Det vil sige at $a = -3$ og $b = 6$.
+\[(x-(-3))^2+(y-6)^2 = 4^2 \Leftrightarrow \underline{\underline{(x+3)^2+(y-6)^2 = 16}}\]
 
 \section{Linje}
 
@@ -994,6 +991,8 @@ b = 3 - 2 \cdot 1 = \underline{1}
 Vi har nu fundet både $a$ og $b$ og kan nu konstruere ligningen for linjen $l$:
 \[\underline{\underline{y = 2x+1}}\]
 
+\newpage
+
 \section{Parabel}
 
 \ref{op:parabel_1}. $a = 2$, $b = -5$ og $c = 2$ \\
@@ -1003,7 +1002,7 @@ Dernæst kan vi beregne de to rødder.
 \begin{displaymath}\begin{array}{l}
 x_1 = \frac{-b-\sqrt{d}}{2a} = \frac{-(-5) - \sqrt{9}}{2 \cdot 2} = \frac{5 - 3}{4} = \frac{1}{2} \\
 x_2 = \frac{-b+\sqrt{d}}{2a} = \frac{-(-5) + \sqrt{9}}{2 \cdot 2} = \frac{5 + 3}{4} = 2 \\
-\underline{\underline{x = \frac{1}{2} \vee x = 2}}
+\underline{\underline{x_1 = \frac{1}{2}, \quad x_2 = 2}}
 \end{array}\end{displaymath}
 Nu skal vi beregne toppunktet for parablen. Til dette benytter vi \eqref{eq:parabel_toppunkt}
 \begin{displaymath}\begin{array}{l}
