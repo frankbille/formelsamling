@@ -27,3 +27,5 @@ Dette værk er udgivet under [Creative Commons Navngivelse-DelPåSammeVilkår 4.
 [omslag]: https://github.com/frankbille/formelsamling/raw/master/omslag.svg
 [lasertryk]: http://www.lasertryk.dk
 [license]: http://creativecommons.org/licenses/by-sa/4.0/deed.da
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/frankbille/formelsamling/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
